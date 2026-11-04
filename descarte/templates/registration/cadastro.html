@@ -1,0 +1,26 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Criar conta{% endblock %}
+{% block conteudo %}
+<div class="painel painel--estreito">
+  <h1>Criar conta</h1>
+  <p class="nota">Pedimos só o necessário: nome, e-mail e unidade.</p>
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}<div class="erro-form" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+    {% for campo in form %}
+      <div class="campo {% if campo.name == 'aceite' %}campo--caixa{% endif %}">
+        {% if campo.name == 'aceite' %}
+          {{ campo }}<label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+        {% else %}
+          <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+          {{ campo }}
+        {% endif %}
+        {% if campo.help_text %}<p class="ajuda" id="ajuda-{{ campo.name }}">{{ campo.help_text }}</p>{% endif %}
+        {% for e in campo.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}
+      </div>
+    {% endfor %}
+    <button class="botao" type="submit">Criar conta</button>
+  </form>
+  <p class="nota">Já tem conta? <a href="{% url 'login' %}">Entrar</a>.</p>
+</div>
+{% endblock %}

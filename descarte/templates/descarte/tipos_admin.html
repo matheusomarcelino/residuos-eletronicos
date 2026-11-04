@@ -1,0 +1,20 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Gerenciar tipos de resíduo{% endblock %}
+{% block conteudo %}
+<div class="titulo-acao"><h1>Tipos de resíduo</h1><a class="botao" href="{% url 'tipo_novo' %}">Novo tipo</a></div>
+<div class="tabela-rolavel">
+<table class="tabela tabela--empilhavel">
+  <caption class="visualmente-oculto">Tipos de resíduo cadastrados</caption>
+  <thead><tr><th scope="col">Nome</th><th scope="col">Itens registrados</th><th scope="col">Ação</th></tr></thead>
+  <tbody>
+  {% for t in tipos %}
+    <tr>
+      <th scope="row" data-rotulo="Nome">{{ t.nome }}</th>
+      <td data-rotulo="Itens registrados">{{ t.qtd }}</td>
+      <td data-rotulo="Ação"><a href="{% url 'tipo_editar' t.pk %}">Editar<span class="visualmente-oculto"> {{ t.nome }}</span></a></td>
+    </tr>
+  {% empty %}<tr><td colspan="3" class="vazio">Nenhum tipo cadastrado.</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

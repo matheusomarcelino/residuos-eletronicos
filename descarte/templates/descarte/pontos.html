@@ -1,0 +1,33 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Pontos de coleta{% endblock %}
+{% block conteudo %}
+<h1>Pontos de coleta</h1>
+<p class="lead">Consulte onde entregar cada tipo de resíduo. Não é preciso estar logado.</p>
+
+<form class="filtro" method="get" id="filtro-pontos">
+  <div class="campo">
+    <label for="tipo">Filtrar por tipo de resíduo</label>
+    <select name="tipo" id="tipo">
+      <option value="">Todos os tipos</option>
+      {% for t in tipos %}<option value="{{ t.id }}" {% if tipo_selecionado == t.id|stringformat:"s" %}selected{% endif %}>{{ t.nome }}</option>{% endfor %}
+    </select>
+  </div>
+  <button class="botao botao--contorno" type="submit">Filtrar</button>
+</form>
+
+<p id="resultado-pontos" class="visualmente-oculto" aria-live="polite"></p>
+<ul class="cartoes" id="lista-pontos" data-url="{% url 'api_pontos' %}">
+  {% for p in pontos %}
+    <li class="cartao">
+      <h2 class="cartao__titulo">{{ p.nome }}</h2>
+      <p class="cartao__linha"><span class="rotulo">Endereço:</span> {{ p.endereco }}</p>
+      {% if p.horario %}<p class="cartao__linha"><span class="rotulo">Horário:</span> {{ p.horario }}</p>{% endif %}
+      <p class="cartao__linha"><span class="rotulo">Aceita:</span></p>
+      <ul class="etiquetas">{% for t in p.tipos.all %}<li>{{ t.nome }}</li>{% empty %}<li>Todos os tipos</li>{% endfor %}</ul>
+    </li>
+  {% empty %}
+    <li class="vazio">Nenhum ponto de coleta encontrado para este filtro.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{% block scripts %}{% load static %}<script src="{% static 'descarte/js/pontos.js' %}"></script>{% endblock %}

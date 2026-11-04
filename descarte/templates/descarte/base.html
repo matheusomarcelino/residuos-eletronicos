@@ -1,0 +1,72 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}Início{% endblock %} · Descarte de Eletrônicos</title>
+  <meta name="description" content="Registre e acompanhe o descarte sustentável de resíduos eletrônicos e consulte os pontos de coleta.">
+  <link rel="stylesheet" href="{% static 'descarte/css/estilo.css' %}">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="container topo__linha">
+      <a class="marca" href="{% url 'home' %}">
+        <span class="marca__icone" aria-hidden="true">♻</span>
+        <span>Descarte de Eletrônicos</span>
+      </a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-botao__texto">Menu</span>
+      </button>
+      <nav id="menu-principal" class="menu" aria-label="Principal">
+        <ul class="menu__lista">
+          <li><a href="{% url 'pontos' %}" {% if request.resolver_match.url_name == 'pontos' %}aria-current="page"{% endif %}>Pontos de coleta</a></li>
+          <li><a href="{% url 'orientacoes' %}" {% if request.resolver_match.url_name == 'orientacoes' %}aria-current="page"{% endif %}>Orientações</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'registrar' %}" {% if request.resolver_match.url_name == 'registrar' %}aria-current="page"{% endif %}>Registrar descarte</a></li>
+            <li><a href="{% url 'minhas_solicitacoes' %}" {% if request.resolver_match.url_name == 'minhas_solicitacoes' %}aria-current="page"{% endif %}>Meus registros</a></li>
+            {% if user.eh_administrador %}
+              <li class="menu__grupo"><span>Gestão</span>
+                <ul>
+                  <li><a href="{% url 'gestao_solicitacoes' %}">Solicitações</a></li>
+                  <li><a href="{% url 'pontos_admin' %}">Pontos</a></li>
+                  <li><a href="{% url 'tipos_admin' %}">Tipos de resíduo</a></li>
+                  <li><a href="{% url 'relatorio' %}">Relatório</a></li>
+                </ul>
+              </li>
+            {% endif %}
+            <li class="menu__sessao">
+              <span class="menu__usuario">{{ user.nome }}</span>
+              <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit" class="botao botao--contorno botao--pequeno">Sair</button></form>
+            </li>
+          {% else %}
+            <li><a class="botao botao--contorno botao--pequeno" href="{% url 'login' %}">Entrar</a></li>
+            <li><a class="botao botao--pequeno botao--claro" href="{% url 'cadastro' %}">Criar conta</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <div class="container">
+      {% if messages %}
+        <div class="mensagens" role="status">
+          {% for m in messages %}<p class="aviso aviso--{{ m.tags }}">{{ m }}</p>{% endfor %}
+        </div>
+      {% endif %}
+      {% block conteudo %}{% endblock %}
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Projeto Integrador II · UFMS Digital · Ação de extensão sobre descarte sustentável de resíduos eletrônicos.</p>
+      <p>Coletamos apenas nome, e-mail e unidade, só para registrar e acompanhar descartes (LGPD).</p>
+    </div>
+  </footer>
+  <script src="{% static 'descarte/js/menu.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

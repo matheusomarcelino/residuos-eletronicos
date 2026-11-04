@@ -1,0 +1,38 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Orientações{% endblock %}
+{% block conteudo %}
+<h1>Orientações de descarte</h1>
+<p class="lead">O descarte inadequado de resíduos eletrônicos libera substâncias tóxicas no ambiente e desperdiça materiais recuperáveis. Esses cuidados ajudam a fazer a coisa certa.</p>
+
+<section aria-labelledby="o-que-fazer">
+  <h2 id="o-que-fazer">Boas práticas</h2>
+  <ul class="lista">
+    <li>Não descarte pilhas, baterias e eletrônicos no lixo comum.</li>
+    <li>Entregue os itens em um <a href="{% url 'pontos' %}">ponto de coleta</a> que aceite aquele tipo de resíduo.</li>
+    <li>Mantenha baterias secas e sem danos; se estiverem estufadas, isole-as e entregue com cuidado.</li>
+    <li>Sempre que possível, doe ou conserte aparelhos que ainda funcionam.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="dados">
+  <h2 id="dados">Proteção de dados</h2>
+  <p>Celulares, computadores e outros aparelhos podem guardar dados pessoais e da empresa. Antes de entregar:</p>
+  <ul class="lista">
+    <li>Faça cópia do que for importante e saia de todas as contas.</li>
+    <li>Restaure o aparelho para os dados de fábrica; em discos (HD/SSD), apague com segurança ou destrua a mídia.</li>
+    <li>Retire chip e cartão de memória.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="por-tipo">
+  <h2 id="por-tipo">Orientações por tipo de resíduo</h2>
+  {% for t in tipos %}
+    <details class="detalhe">
+      <summary>{{ t.nome }}</summary>
+      <p>{{ t.orientacoes|default:"Entregue em um ponto de coleta que aceite este tipo de resíduo." }}</p>
+    </details>
+  {% empty %}
+    <p>Ainda não há tipos de resíduo cadastrados.</p>
+  {% endfor %}
+</section>
+{% endblock %}

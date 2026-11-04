@@ -1,0 +1,50 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Gestão de solicitações{% endblock %}
+{% block conteudo %}
+<h1>Solicitações de descarte</h1>
+<p class="lead">Atualize o status conforme os itens forem coletados e encaminhados.</p>
+
+<form class="filtro" method="get">
+  <div class="campo">
+    <label for="status">Filtrar por status</label>
+    <select name="status" id="status">
+      <option value="">Todos</option>
+      {% for valor, rotulo in status_escolhas %}<option value="{{ valor }}" {% if status_atual == valor %}selected{% endif %}>{{ rotulo }}</option>{% endfor %}
+    </select>
+  </div>
+  <button class="botao botao--contorno" type="submit">Filtrar</button>
+</form>
+
+<p id="aviso-status" class="visualmente-oculto" role="status" aria-live="polite"></p>
+<div class="tabela-rolavel">
+<table class="tabela tabela--empilhavel" id="tabela-solicitacoes">
+  <caption class="visualmente-oculto">Solicitações de descarte</caption>
+  <thead>
+    <tr><th scope="col">Nº</th><th scope="col">Data</th><th scope="col">Colaborador</th><th scope="col">Unidade</th><th scope="col">Ponto</th><th scope="col">Itens</th><th scope="col">Status</th><th scope="col">Ação</th></tr>
+  </thead>
+  <tbody>
+    {% for s in solicitacoes %}
+    <tr>
+      <th scope="row" data-rotulo="Nº">#{{ s.pk }}</th>
+      <td data-rotulo="Data">{{ s.data|date:"d/m/Y" }}</td>
+      <td data-rotulo="Colaborador">{{ s.usuario.nome }}</td>
+      <td data-rotulo="Unidade">{{ s.unidade }}</td>
+      <td data-rotulo="Ponto">{{ s.ponto }}</td>
+      <td data-rotulo="Itens">{% include "descarte/_solicitacao_itens.html" %}</td>
+      <td data-rotulo="Status"><span class="status status--{{ s.status }}">{{ s.get_status_display }}</span></td>
+      <td data-rotulo="Ação">
+        {% if s.proximo_status %}
+          <form method="post" action="{% url 'avancar_status' s.pk %}" class="form-status">{% csrf_token %}
+            <button type="submit" class="botao botao--pequeno">Marcar como {{ s.proximo_status|capfirst }}</button>
+          </form>
+        {% else %}<span class="nota">Concluída</span>{% endif %}
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="8" class="vazio">Nenhuma solicitação encontrada.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
+{% block scripts %}{% load static %}<script src="{% static 'descarte/js/status.js' %}"></script>{% endblock %}

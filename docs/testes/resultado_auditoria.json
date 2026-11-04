@@ -1,0 +1,1057 @@
+[
+ [
+  "celular 390 | / | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | / | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /pontos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /pontos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /orientacoes/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /orientacoes/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /entrar/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /entrar/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /cadastro/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /cadastro/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | anônimo | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /registrar/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /registrar/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /meus-registros/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /meus-registros/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | colaborador | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /gestao/solicitacoes/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /gestao/solicitacoes/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /gestao/pontos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /gestao/pontos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /gestao/pontos/novo/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /gestao/pontos/novo/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /gestao/tipos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /gestao/tipos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /gestao/tipos/novo/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /gestao/tipos/novo/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | /gestao/relatorio/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "celular 390 | /gestao/relatorio/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "celular 390 | administrador | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | / | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | / | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /pontos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /pontos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /orientacoes/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /orientacoes/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /entrar/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /entrar/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /cadastro/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /cadastro/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | anônimo | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /registrar/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /registrar/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /meus-registros/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /meus-registros/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | colaborador | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /gestao/solicitacoes/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /gestao/solicitacoes/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /gestao/pontos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /gestao/pontos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /gestao/pontos/novo/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /gestao/pontos/novo/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /gestao/tipos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /gestao/tipos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /gestao/tipos/novo/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /gestao/tipos/novo/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | /gestao/relatorio/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "tablet 768 | /gestao/relatorio/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "tablet 768 | administrador | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "desktop 1280 | / | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | / | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /pontos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /pontos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/pontos/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/pontos/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/pontos/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/pontos/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/pontos/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/pontos/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/pontos/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/pontos/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /orientacoes/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /orientacoes/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/orientacoes/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/orientacoes/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/orientacoes/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/orientacoes/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/orientacoes/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/orientacoes/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/orientacoes/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/orientacoes/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /entrar/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /entrar/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/entrar/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/entrar/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/entrar/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/entrar/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/entrar/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/entrar/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/entrar/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/entrar/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /cadastro/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /cadastro/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/cadastro/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/cadastro/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/cadastro/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/cadastro/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/cadastro/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/cadastro/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/cadastro/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/cadastro/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | anônimo | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "desktop 1280 | /registrar/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /registrar/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/registrar/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/registrar/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/registrar/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/registrar/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/registrar/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/registrar/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/registrar/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/registrar/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /meus-registros/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /meus-registros/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/meus-registros/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/meus-registros/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/meus-registros/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/meus-registros/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/meus-registros/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/meus-registros/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/meus-registros/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/meus-registros/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | colaborador | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "desktop 1280 | /gestao/solicitacoes/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /gestao/solicitacoes/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/solicitacoes/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/solicitacoes/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/gestao/solicitacoes/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/solicitacoes/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/solicitacoes/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/solicitacoes/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/solicitacoes/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/solicitacoes/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /gestao/pontos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /gestao/pontos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/pontos/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/gestao/pontos/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/pontos/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/pontos/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /gestao/pontos/novo/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /gestao/pontos/novo/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/novo/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/pontos/novo/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/gestao/pontos/novo/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/novo/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/pontos/novo/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/novo/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/pontos/novo/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/pontos/novo/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /gestao/tipos/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /gestao/tipos/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/tipos/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/gestao/tipos/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/tipos/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/tipos/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /gestao/tipos/novo/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /gestao/tipos/novo/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/novo/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/tipos/novo/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/gestao/tipos/novo/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/novo/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/tipos/novo/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/novo/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/tipos/novo/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/tipos/novo/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | /gestao/relatorio/ | sem rolagem horizontal",
+  "APROVADO",
+  ""
+ ],
+ [
+  "desktop 1280 | /gestao/relatorio/ | nada fora da tela",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/relatorio/ | lang pt-BR e viewport e título",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/relatorio/ | um único h1",
+  "APROVADO",
+  "h1=1"
+ ],
+ [
+  "/gestao/relatorio/ | marcos header/nav/main/footer",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/relatorio/ | hierarquia de títulos sem saltos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/relatorio/ | todos os campos têm rótulo",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/relatorio/ | links e botões com texto",
+  "APROVADO",
+  ""
+ ],
+ [
+  "/gestao/relatorio/ | ids únicos",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "/gestao/relatorio/ | imagens com alt",
+  "APROVADO",
+  "0 imagens na página"
+ ],
+ [
+  "desktop 1280 | administrador | sem erros de console/rede",
+  "APROVADO",
+  "[]"
+ ],
+ [
+  "teclado | primeiro Tab foca o link \"Pular para o conteúdo\"",
+  "APROVADO",
+  "pular|Pular para o conteúdo"
+ ],
+ [
+  "teclado | Enter no link de pular leva o foco ao conteúdo",
+  "APROVADO",
+  ""
+ ],
+ [
+  "teclado | Enter no botão Menu abre a navegação",
+  "APROVADO",
+  ""
+ ],
+ [
+  "teclado | Esc fecha o menu e devolve o foco ao botão",
+  "APROVADO",
+  ""
+ ],
+ [
+  "teclado | Enter em \"Adicionar outro item\" cria a linha 2",
+  "APROVADO",
+  ""
+ ],
+ [
+  "dinâmico | filtro de pontos atualiza a lista sem navegar",
+  "APROVADO",
+  "3 → 3"
+ ],
+ [
+  "dinâmico | resultado anunciado em região aria-live",
+  "APROVADO",
+  ""
+ ],
+ [
+  "dinâmico | Recic.LE aparece com horário real",
+  "APROVADO",
+  ""
+ ],
+ [
+  "validação | quantidade 0 e ponto vazio são rejeitados com mensagens",
+  "APROVADO",
+  "2 mensagens"
+ ],
+ [
+  "dinâmico | TOTAL_FORMS acompanha as linhas",
+  "APROVADO",
+  ""
+ ],
+ [
+  "dinâmico | remover renumera os campos",
+  "APROVADO",
+  ""
+ ],
+ [
+  "fluxo | registro válido redireciona para \"Meus registros\" com aviso",
+  "APROVADO",
+  ""
+ ],
+ [
+  "dinâmico | status muda sem recarregar",
+  "APROVADO",
+  "Solicitado → Coletado"
+ ],
+ [
+  "dinâmico | mudança de status anunciada (aria-live)",
+  "APROVADO",
+  ""
+ ],
+ [
+  "sem JS | menu visível no celular (sem botão Menu)",
+  "APROVADO",
+  ""
+ ],
+ [
+  "sem JS | filtro de pontos funciona pelo botão Filtrar",
+  "APROVADO",
+  "http://127.0.0.1:8765/pontos/?tipo=1"
+ ],
+ [
+  "sem JS | botão \"Adicionar\" oculto e formulário com 1 item",
+  "APROVADO",
+  ""
+ ],
+ [
+  "sem JS | registro de descarte funciona",
+  "APROVADO",
+  ""
+ ],
+ [
+  "sem JS | mudança de status funciona por envio comum",
+  "APROVADO",
+  ""
+ ],
+ [
+  "permissão | colaborador recebe 403 na gestão",
+  "APROVADO",
+  ""
+ ]
+]

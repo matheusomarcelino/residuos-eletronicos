@@ -1,0 +1,44 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Relatório{% endblock %}
+{% block conteudo %}
+<div class="titulo-acao"><h1>Relatório de descartes</h1>
+  <a class="botao botao--contorno" href="?{{ request.GET.urlencode }}{% if request.GET %}&amp;{% endif %}formato=csv">Exportar CSV</a></div>
+
+<form class="filtro" method="get">
+  {% for campo in filtro %}
+    <div class="campo"><label for="{{ campo.id_for_label }}">{{ campo.label }}</label>{{ campo }}
+      {% for e in campo.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}</div>
+  {% endfor %}
+  <button class="botao botao--contorno" type="submit">Aplicar</button>
+  <a class="botao botao--texto" href="{% url 'relatorio' %}">Limpar</a>
+</form>
+
+<dl class="numeros">
+  <div class="numeros__item"><dt>Total de itens</dt><dd>{{ total }}</dd></div>
+  <div class="numeros__item"><dt>Solicitações</dt><dd>{{ total_solicitacoes }}</dd></div>
+</dl>
+
+<div class="grade-relatorio">
+  <section aria-labelledby="r-tipo">
+    <h2 id="r-tipo">Por tipo de resíduo</h2>
+    <table class="tabela tabela--barras"><caption class="visualmente-oculto">Itens por tipo de resíduo</caption>
+      <thead><tr><th scope="col">Tipo</th><th scope="col">Qtd.</th><th scope="col">Proporção</th></tr></thead>
+      <tbody>{% for x in por_tipo %}<tr><th scope="row">{{ x.tipo__nome }}</th><td>{{ x.total }}</td><td><meter min="0" max="100" value="{{ x.pct }}">{{ x.pct }}%</meter></td></tr>
+      {% empty %}<tr><td colspan="3" class="vazio">Sem dados no período.</td></tr>{% endfor %}</tbody></table>
+  </section>
+  <section aria-labelledby="r-unidade">
+    <h2 id="r-unidade">Por unidade</h2>
+    <table class="tabela tabela--barras"><caption class="visualmente-oculto">Itens por unidade</caption>
+      <thead><tr><th scope="col">Unidade</th><th scope="col">Qtd.</th><th scope="col">Proporção</th></tr></thead>
+      <tbody>{% for x in por_unidade %}<tr><th scope="row">{{ x.solicitacao__unidade__nome }}</th><td>{{ x.total }}</td><td><meter min="0" max="100" value="{{ x.pct }}">{{ x.pct }}%</meter></td></tr>
+      {% empty %}<tr><td colspan="3" class="vazio">Sem dados no período.</td></tr>{% endfor %}</tbody></table>
+  </section>
+  <section aria-labelledby="r-mes">
+    <h2 id="r-mes">Por mês</h2>
+    <table class="tabela tabela--barras"><caption class="visualmente-oculto">Itens por mês</caption>
+      <thead><tr><th scope="col">Mês</th><th scope="col">Qtd.</th><th scope="col">Proporção</th></tr></thead>
+      <tbody>{% for x in por_mes %}<tr><th scope="row">{{ x.mes|date:"m/Y" }}</th><td>{{ x.total }}</td><td><meter min="0" max="100" value="{{ x.pct }}">{{ x.pct }}%</meter></td></tr>
+      {% empty %}<tr><td colspan="3" class="vazio">Sem dados no período.</td></tr>{% endfor %}</tbody></table>
+  </section>
+</div>
+{% endblock %}

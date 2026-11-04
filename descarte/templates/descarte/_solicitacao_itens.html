@@ -1,0 +1,3 @@
+<ul class="etiquetas">
+  {% for i in s.itens.all %}<li>{{ i.quantidade }} × {{ i.tipo.nome }}{% if i.observacao %} ({{ i.observacao }}){% endif %}</li>{% endfor %}
+</ul>

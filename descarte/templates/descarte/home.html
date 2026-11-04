@@ -1,0 +1,36 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Início{% endblock %}
+{% block conteudo %}
+<section class="heroi" aria-labelledby="titulo-heroi">
+  <h1 id="titulo-heroi">Descarte seus eletrônicos do jeito certo</h1>
+  <p class="heroi__texto">Registre pilhas, baterias, celulares e outros equipamentos, escolha um ponto de coleta e acompanhe o que aconteceu com o seu descarte.</p>
+  <div class="acoes">
+    {% if user.is_authenticated %}
+      <a class="botao" href="{% url 'registrar' %}">Registrar descarte</a>
+      <a class="botao botao--contorno" href="{% url 'minhas_solicitacoes' %}">Meus registros</a>
+    {% else %}
+      <a class="botao" href="{% url 'cadastro' %}">Criar conta</a>
+      <a class="botao botao--contorno" href="{% url 'pontos' %}">Ver pontos de coleta</a>
+    {% endif %}
+  </div>
+</section>
+
+<section aria-labelledby="titulo-numeros">
+  <h2 id="titulo-numeros">Resumo do impacto</h2>
+  <dl class="numeros">
+    <div class="numeros__item"><dt>Itens registrados</dt><dd>{{ total_itens }}</dd></div>
+    <div class="numeros__item"><dt>Solicitações</dt><dd>{{ total_solicitacoes }}</dd></div>
+    <div class="numeros__item"><dt>Pontos de coleta ativos</dt><dd>{{ total_pontos }}</dd></div>
+  </dl>
+</section>
+
+<section aria-labelledby="titulo-como">
+  <h2 id="titulo-como">Como funciona</h2>
+  <ol class="passos">
+    <li><strong>Consulte</strong> os <a href="{% url 'pontos' %}">pontos de coleta</a> e os tipos de resíduo aceitos.</li>
+    <li><strong>Registre</strong> o descarte em poucos passos, com os itens e as quantidades.</li>
+    <li><strong>Acompanhe</strong> o status: solicitado, coletado e encaminhado.</li>
+  </ol>
+  <p>Antes de descartar celulares e computadores, leia as <a href="{% url 'orientacoes' %}">orientações sobre proteção de dados</a>.</p>
+</section>
+{% endblock %}

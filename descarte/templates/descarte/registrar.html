@@ -1,0 +1,44 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Registrar descarte{% endblock %}
+{% block conteudo %}
+<h1>Registrar descarte</h1>
+<p class="lead">Informe onde você vai entregar e quais itens serão descartados. Leva menos de 2 minutos.</p>
+
+<form method="post" class="painel" id="form-descarte" novalidate>
+  {% csrf_token %}
+  {% if form.non_field_errors %}<div class="erro-form" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+
+  <fieldset>
+    <legend>Dados do descarte</legend>
+    <div class="grade-campos">
+      {% for campo in form %}
+        <div class="campo">
+          <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+          {{ campo }}
+          {% for e in campo.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Itens descartados</legend>
+    {{ formset.management_form }}
+    {% if formset.non_form_errors %}<div class="erro-form" role="alert">{{ formset.non_form_errors }}</div>{% endif %}
+    <div id="itens" aria-live="polite">
+      {% for f in formset %}
+        {% include "descarte/_item_linha.html" with f=f %}
+      {% endfor %}
+    </div>
+    <button type="button" class="botao botao--contorno" id="adicionar-item" hidden>+ Adicionar outro item</button>
+  </fieldset>
+
+  <template id="modelo-item">{% include "descarte/_item_linha.html" with f=formset.empty_form %}</template>
+
+  <div class="acoes">
+    <button class="botao" type="submit">Registrar descarte</button>
+    <a class="botao botao--contorno" href="{% url 'minhas_solicitacoes' %}">Cancelar</a>
+  </div>
+</form>
+{% endblock %}
+{% block scripts %}{% load static %}<script src="{% static 'descarte/js/itens.js' %}"></script>{% endblock %}

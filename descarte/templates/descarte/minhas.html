@@ -1,0 +1,34 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Meus registros{% endblock %}
+{% block conteudo %}
+<h1>Meus registros</h1>
+<p class="lead">Acompanhe o status de cada descarte. O fluxo é: solicitado, coletado e encaminhado.</p>
+
+<form class="filtro" method="get">
+  {% for campo in filtro %}{% if campo.name != 'unidade' %}
+    <div class="campo">
+      <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>{{ campo }}
+      {% for e in campo.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}
+    </div>
+  {% endif %}{% endfor %}
+  <button class="botao botao--contorno" type="submit">Filtrar</button>
+  <a class="botao botao--texto" href="{% url 'minhas_solicitacoes' %}">Limpar</a>
+</form>
+
+<ul class="cartoes cartoes--largos">
+  {% for s in solicitacoes %}
+    <li class="cartao">
+      <div class="cartao__cabeca">
+        <h2 class="cartao__titulo">Solicitação #{{ s.pk }}</h2>
+        <span class="status status--{{ s.status }}">{{ s.get_status_display }}</span>
+      </div>
+      <p class="cartao__linha"><span class="rotulo">Data:</span> <time datetime="{{ s.data|date:'Y-m-d' }}">{{ s.data|date:"d/m/Y" }}</time></p>
+      <p class="cartao__linha"><span class="rotulo">Unidade:</span> {{ s.unidade }}</p>
+      <p class="cartao__linha"><span class="rotulo">Ponto de coleta:</span> {{ s.ponto }}</p>
+      {% include "descarte/_solicitacao_itens.html" %}
+    </li>
+  {% empty %}
+    <li class="vazio">Nenhum registro encontrado. <a href="{% url 'registrar' %}">Registre seu primeiro descarte</a>.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

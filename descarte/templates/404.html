@@ -1,0 +1,7 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Página não encontrada{% endblock %}
+{% block conteudo %}
+<div class="painel painel--estreito"><h1>Página não encontrada</h1>
+<p>O endereço pedido não existe ou foi removido.</p>
+<a class="botao" href="{% url 'home' %}">Voltar ao início</a></div>
+{% endblock %}

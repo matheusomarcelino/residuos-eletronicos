@@ -1,0 +1,21 @@
+<div class="item-linha">
+  {% for h in f.hidden_fields %}{{ h }}{% endfor %}
+  <div class="grade-campos grade-campos--item">
+    <div class="campo">
+      <label for="{{ f.tipo.id_for_label }}">Tipo de resíduo</label>
+      {{ f.tipo }}
+      {% for e in f.tipo.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}
+    </div>
+    <div class="campo">
+      <label for="{{ f.quantidade.id_for_label }}">Quantidade</label>
+      {{ f.quantidade }}
+      {% for e in f.quantidade.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}
+    </div>
+    <div class="campo campo--largo">
+      <label for="{{ f.observacao.id_for_label }}">Observação (opcional)</label>
+      {{ f.observacao }}
+      {% for e in f.observacao.errors %}<p class="erro" role="alert">{{ e }}</p>{% endfor %}
+    </div>
+  </div>
+  <button type="button" class="botao botao--perigo botao--pequeno remover-item" hidden>Remover este item</button>
+</div>

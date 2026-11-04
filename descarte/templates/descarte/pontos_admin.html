@@ -1,0 +1,22 @@
+{% extends "descarte/base.html" %}
+{% block titulo %}Gerenciar pontos de coleta{% endblock %}
+{% block conteudo %}
+<div class="titulo-acao"><h1>Pontos de coleta</h1><a class="botao" href="{% url 'ponto_novo' %}">Novo ponto</a></div>
+<div class="tabela-rolavel">
+<table class="tabela tabela--empilhavel">
+  <caption class="visualmente-oculto">Pontos de coleta cadastrados</caption>
+  <thead><tr><th scope="col">Nome</th><th scope="col">Endereço</th><th scope="col">Tipos aceitos</th><th scope="col">Situação</th><th scope="col">Ação</th></tr></thead>
+  <tbody>
+  {% for p in pontos %}
+    <tr>
+      <th scope="row" data-rotulo="Nome">{{ p.nome }}</th>
+      <td data-rotulo="Endereço">{{ p.endereco }}</td>
+      <td data-rotulo="Tipos aceitos">{% for t in p.tipos.all %}{{ t.nome }}{% if not forloop.last %}, {% endif %}{% empty %}Todos{% endfor %}</td>
+      <td data-rotulo="Situação">{% if p.ativo %}Ativo{% else %}Inativo{% endif %}</td>
+      <td data-rotulo="Ação"><a href="{% url 'ponto_editar' p.pk %}">Editar<span class="visualmente-oculto"> {{ p.nome }}</span></a></td>
+    </tr>
+  {% empty %}<tr><td colspan="5" class="vazio">Nenhum ponto cadastrado.</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}
