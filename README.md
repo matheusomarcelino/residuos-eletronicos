@@ -93,6 +93,19 @@ python manage.py test
 Os 25 testes cobrem cadastro e login, perfis e permissões, registro de descarte (com as regras de validação), fluxo
 de status, filtros, relatório e exportação CSV.
 
+## Banco de dados (SQL)
+
+Além das tabelas que o Django cria sozinho (SQLite), o projeto traz o esquema do banco escrito em SQL para
+PostgreSQL: tabelas, chaves, restrições, gatilhos, visões e consultas. Veja `database/README.md` para executar
+e `docs/BANCO_DE_DADOS.md` para o modelo, o dicionário de dados e os resultados (20 de 20 testes de integridade).
+
+![DER](docs/diagramas/der_sql.png)
+
+## Controle de versão
+
+O trabalho usa branches por assunto, merges com `--no-ff`, mensagens no padrão *Conventional Commits* e tags de
+versão. Detalhes em `docs/GIT.md`.
+
 ## Estrutura do projeto
 
 ```
@@ -110,11 +123,14 @@ residuos-eletronicos/
 │   ├── management/commands/seed_demo.py
 │   ├── templates/          # páginas HTML
 │   └── static/descarte/    # css/ e js/
+├── database/               # scripts SQL (PostgreSQL): esquema, dados, consultas, testes
 └── docs/
     ├── DECISOES.md         # principais decisões de desenvolvimento
+    ├── BANCO_DE_DADOS.md   # modelo, dicionário de dados e resultados dos scripts SQL
+    ├── GIT.md              # estratégia de versionamento
     ├── diagramas/          # DER e diagramas UML
     ├── capturas/           # capturas de tela (celular, tablet e computador)
-    └── testes/             # script e resultado da auditoria no navegador
+    └── testes/             # auditoria no navegador e saída da execução dos scripts SQL
 ```
 
 ## Variáveis de ambiente (produção)
