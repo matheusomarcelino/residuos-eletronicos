@@ -1,0 +1,217 @@
+================ 01_schema.sql ================
+================ 02_dados.sql ================
+================ 03_consultas.sql ================
+--- C1 (RF03) Pontos de coleta ativos e os tipos que aceitam
++----------------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------+
+|                                ponto                                 |                      horario                      |                                 tipos_aceitos                                 |
++----------------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------+
+| Ponto de coleta da sede (exemplo)                                    | Seg a sex, 8h às 17h                              | Baterias, Carregadores e cabos, Celulares, Computadores e periféricos, Pilhas |
+| Ponto de coleta de pilhas e baterias (exemplo)                       | Seg a sáb, 9h às 18h                              | Baterias, Pilhas                                                              |
+| Recic.LE – Associação dos Recicladores de Resíduos Eletroeletrônicos | Seg a sex, 8h às 18h; sáb, 8h às 12h; dom fechado | Baterias, Carregadores e cabos, Celulares, Computadores e periféricos, Pilhas |
++----------------------------------------------------------------------+---------------------------------------------------+-------------------------------------------------------------------------------+
+(3 rows)
+
+--- C2 (RF03) Filtro: pontos que aceitam "Pilhas"
++----------------------------------------------------------------------+----------------------------------------------------------+
+|                                ponto                                 |                         endereco                         |
++----------------------------------------------------------------------+----------------------------------------------------------+
+| Ponto de coleta da sede (exemplo)                                    | Endereço de exemplo, 100 – Campo Grande/MS               |
+| Ponto de coleta de pilhas e baterias (exemplo)                       | Endereço de exemplo, 200 – Campo Grande/MS               |
+| Recic.LE – Associação dos Recicladores de Resíduos Eletroeletrônicos | Rua Vera Cruz, 542 – Bairro Rita Vieira, Campo Grande/MS |
++----------------------------------------------------------------------+----------------------------------------------------------+
+(3 rows)
+
+--- C3 (RF04/RF06) Solicitações com usuário, unidade, ponto e total de itens (visão)
++----+------------+-------------+---------------------+---------------------+------------------------------------------------+-------------+
+| id |    data    |   status    |       usuario       |       unidade       |                     ponto                      | total_itens |
++----+------------+-------------+---------------------+---------------------+------------------------------------------------+-------------+
+|  3 | 2026-11-03 | solicitado  | Colaborador Exemplo | Loja Exemplo Bairro | Ponto de coleta da sede (exemplo)              |           2 |
+|  2 | 2026-10-31 | coletado    | Colaborador Exemplo | Loja Exemplo Centro | Ponto de coleta de pilhas e baterias (exemplo) |          24 |
+|  1 | 2026-10-26 | encaminhado | Colaborador Exemplo | Loja Exemplo Centro | Ponto de coleta da sede (exemplo)              |           8 |
++----+------------+-------------+---------------------+---------------------+------------------------------------------------+-------------+
+(3 rows)
+
+--- C4 (RF04) Solicitações ainda não encaminhadas (pendentes de ação do administrador)
++----+------------+------------+---------------------+
+| id |    data    |   status   |       unidade       |
++----+------------+------------+---------------------+
+|  2 | 2026-10-31 | coletado   | Loja Exemplo Centro |
+|  3 | 2026-11-03 | solicitado | Loja Exemplo Bairro |
++----+------------+------------+---------------------+
+(2 rows)
+
+--- C5 (RF07) Total de itens por tipo, com percentual (visão com função de janela)
++----------------------------+-------+------------+
+|            tipo            | total | percentual |
++----------------------------+-------+------------+
+| Pilhas                     |    20 |       58.8 |
+| Carregadores e cabos       |     5 |       14.7 |
+| Baterias                   |     4 |       11.8 |
+| Celulares                  |     3 |        8.8 |
+| Computadores e periféricos |     2 |        5.9 |
++----------------------------+-------+------------+
+(5 rows)
+
+--- C6 (RF07) Total de itens por unidade
++---------------------+-------------+--------------+
+|       unidade       | total_itens | solicitacoes |
++---------------------+-------------+--------------+
+| Loja Exemplo Centro |          32 |            2 |
+| Loja Exemplo Bairro |           2 |            1 |
++---------------------+-------------+--------------+
+(2 rows)
+
+--- C7 (RF07) Total de itens por mês
++---------+-------------+
+|   mes   | total_itens |
++---------+-------------+
+| 2026-10 |          32 |
+| 2026-11 |           2 |
++---------+-------------+
+(2 rows)
+
+--- C8 Tipos de resíduo que ainda não foram descartados (LEFT JOIN ... IS NULL)
++------+
+| tipo |
++------+
++------+
+(0 rows)
+
+--- C9 Pontos que aceitam TODOS os tipos cadastrados (divisão relacional com HAVING)
++----------------------------------------------------------------------+
+|                                 nome                                 |
++----------------------------------------------------------------------+
+| Ponto de coleta da sede (exemplo)                                    |
+| Recic.LE – Associação dos Recicladores de Resíduos Eletroeletrônicos |
++----------------------------------------------------------------------+
+(2 rows)
+
+--- C10 (RF08) Orientações de descarte de um tipo
++-----------+--------------------------------------------------------------------------------------------+
+|   nome    |                                        orientacoes                                         |
++-----------+--------------------------------------------------------------------------------------------+
+| Celulares | Apague os dados e saia das contas antes de descartar. Retire o chip e o cartão de memória. |
++-----------+--------------------------------------------------------------------------------------------+
+(1 row)
+
+================ 04_atualizacao_remocao.sql ================
+--- U1 (RF04) Administrador avança o status da solicitação mais recente: solicitado -> coletado
++----+----------+-------------------+
+| id |  status  | atualizado_por_id |
++----+----------+-------------------+
+|  3 | coletado |                 1 |
++----+----------+-------------------+
+(1 row)
+
+--- U2 (RF05) Administrador corrige o horário de um ponto de coleta
++----+-----------------------------------+--------------------------------------+
+| id |               nome                |               horario                |
++----+-----------------------------------+--------------------------------------+
+|  1 | Ponto de coleta da sede (exemplo) | Seg a sex, 8h às 17h; sáb, 8h às 12h |
++----+-----------------------------------+--------------------------------------+
+(1 row)
+
+--- U3 Cadastro de registros temporários (unidade, usuário, ponto, solicitação e item)
++-------------------+
+| itens_temporarios |
++-------------------+
+|                 1 |
++-------------------+
+(1 row)
+
+--- U4 Atualização de quantidade e de observação de um item
++----+------------+------------+
+| id | quantidade | observacao |
++----+------------+------------+
+|  6 |          3 | Pilhas AA  |
++----+------------+------------+
+(1 row)
+
+--- D1 Transação revertida: apaga os itens, confere e desfaz com ROLLBACK
++---------------------------+
+| itens_dentro_da_transacao |
++---------------------------+
+|                         0 |
++---------------------------+
+(1 row)
+
++---------------------+
+| itens_apos_rollback |
++---------------------+
+|                   1 |
++---------------------+
+(1 row)
+
+--- D2 Remoção em cascata: apagar a solicitação apaga seus itens (ON DELETE CASCADE)
++----+
+| id |
++----+
+|  4 |
++----+
+(1 row)
+
++--------------+
+| itens_orfaos |
++--------------+
+|            0 |
++--------------+
+(1 row)
+
+--- D3 Remoção do ponto temporário: apaga também as linhas de ponto_tipo (CASCADE)
++--------------------------------------+
+| ligacoes_restantes_do_ponto_removido |
++--------------------------------------+
+|                                    0 |
++--------------------------------------+
+(1 row)
+
+--- D4 Remoção da unidade temporária: o usuário permanece e fica sem unidade (SET NULL)
++------------------------+------------+
+|         email          | unidade_id |
++------------------------+------------+
+| temporario@exemplo.com |            |
++------------------------+------------+
+(1 row)
+
+--- D5 Remoção do usuário temporário
++----+------------------------+
+| id |         email          |
++----+------------------------+
+|  3 | temporario@exemplo.com |
++----+------------------------+
+(1 row)
+
+================ 05_testes_integridade.sql ================
++----+----------------------------------------------------------+-----------------------+-----------------------+-----------+
+| nº |                    tentativa inválida                    |       esperado        |        obtido         | resultado |
++----+----------------------------------------------------------+-----------------------+-----------------------+-----------+
+|  1 | Unidade com nome repetido                                | unique_violation      | unique_violation      | OK        |
+|  2 | Unidade com tipo inválido                                | check_violation       | check_violation       | OK        |
+|  3 | Usuário com e-mail repetido                              | unique_violation      | unique_violation      | OK        |
+|  4 | Usuário com e-mail em formato inválido                   | check_violation       | check_violation       | OK        |
+|  5 | Usuário com perfil inexistente                           | check_violation       | check_violation       | OK        |
+|  6 | Usuário sem nome (NOT NULL)                              | not_null_violation    | not_null_violation    | OK        |
+|  7 | Usuário apontando para unidade inexistente (FK)          | foreign_key_violation | foreign_key_violation | OK        |
+|  8 | Tipo de resíduo com nome repetido                        | unique_violation      | unique_violation      | OK        |
+|  9 | Ligação ponto–tipo repetida (chave composta)             | unique_violation      | unique_violation      | OK        |
+| 10 | Solicitação com data no futuro                           | check_violation       | check_violation       | OK        |
+| 11 | Solicitação criada já como "coletado" (gatilho do fluxo) | check_violation       | check_violation       | OK        |
+| 12 | Solicitação com status fora da lista                     | check_violation       | check_violation       | OK        |
+| 13 | Pular etapa: solicitado -> encaminhado                   | check_violation       | check_violation       | OK        |
+| 14 | Voltar etapa: encaminhado -> solicitado                  | check_violation       | check_violation       | OK        |
+| 15 | Item com quantidade zero                                 | check_violation       | check_violation       | OK        |
+| 16 | Item de um tipo que o ponto não aceita (gatilho)         | check_violation       | check_violation       | OK        |
+| 17 | Item de solicitação inexistente (FK)                     | foreign_key_violation | foreign_key_violation | OK        |
+| 18 | Apagar tipo de resíduo já usado em itens (RESTRICT)      | foreign_key_violation | foreign_key_violation | OK        |
+| 19 | Apagar ponto de coleta com solicitações (RESTRICT)       | foreign_key_violation | foreign_key_violation | OK        |
+| 20 | Apagar usuário que registrou solicitações (RESTRICT)     | foreign_key_violation | foreign_key_violation | OK        |
++----+----------------------------------------------------------+-----------------------+-----------------------+-----------+
+(20 rows)
+
++-----------+----------+-------+
+| aprovados | falharam | total |
++-----------+----------+-------+
+|        20 |        0 |    20 |
++-----------+----------+-------+
+(1 row)
+
